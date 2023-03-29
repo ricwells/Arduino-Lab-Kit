@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section {
+            padding: 10px;
+            margin: 10px;
+            border-width: 1px;
+            border-style: solid;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Pumps Calibration and Test</h1>
+    <div class="section">
+        <h3>Pump Calibrations</h3>
+        <button name="" onclick="doFunc('/Calibrate?1?0');">Pump 1 0mL</button>
+        <button name="" onclick="doFunc('/Calibrate?1?10');">Pump 1 10mL</button>
+        <button name="" onclick="doFunc('/Calibrate?2?0')">Pump 2 0mL</button>
+        <button name="" onclick="doFunc('/Calibrate?3?10');">Pump 2 0mL</button>
+    </div>
+    <div class="section">
+        <h3>Pump Tests</h3>
+        <button name="" onclick="doFunc('/Tests?1');">Syringe test 1</button>
+        <button name="" onclick="doFunc('/Tests?2');">Syringe test 2</button>
+        <button name="" onclick="doFunc('/Tests?2');">Syringe test 3</button>
+    </div>
+    <script>
+        function doFunc(url) {
+            doFetch(url)
+        }
+    </script>
+    <div class="section">
+        <h2>Results:</h2>
+        <div id="divResults">
+            <p>Results: %s</p>
+            <div id="divResults2"></div>
+        </div>
+    </div>
+</body>
+</html>
